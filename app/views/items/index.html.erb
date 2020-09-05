@@ -3,6 +3,7 @@
 <h1>TOPページ items#index</h1> 
 
 <%# item一覧 %>
+<div class=""><%= link_to 'POST', new_item_path, class:""%>
 <div class="item-contents">
   <ul class="item-lists">
     <% @items.each do |item| %>
