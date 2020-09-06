@@ -1,0 +1,24 @@
+<h1>投稿ページ</h1>
+<div class="container">
+  <%= form_with model: @item, local: true do |f| %>
+    <div>写真</div>
+    <div class="click-upload">
+    <%= f.file_field :image %>
+    </div>
+    <div>アイテムの名前</div>
+    <%= f.text_field :name, class:"items-text", placeholder: "Item name" %>
+    <div>コメント</div>
+    <%= f.text_area :detail, class:"items-text", placeholder: "comment" %>
+    <div>カテゴリー</div>
+    <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
+    <div>年齢</div>
+    <%= f.collection_select(:age_year_id, AgeYear.all, :id, :name, {}, {class:"select-box"}) %>
+    <%= f.collection_select(:age_month_id, AgeMonth.all, :id, :name, {}, {class:"select-box"}) %>
+    <div>サイズ</div>
+    <%= f.text_field :size, class:"items-text", placeholder: "例)50" %>
+    <div>値段</div>
+    <%= f.text_field :price, class:"items-text", placeholder: "例)1000" %>
+    <%= f.submit "投稿する" %>
+  <% end %>
+</div>
+
