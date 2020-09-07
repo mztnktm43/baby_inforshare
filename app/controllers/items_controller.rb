@@ -9,6 +9,21 @@ class ItemsController < ApplicationController
 
   def creat
     Item.create(item_params)
+    if @item.valid?
+      @item.save
+      redirect_to root_path
+    else
+      render 'new'
+    end
+  end
+
+  def edit
+    # @item = Item.new(item_id)
+  end
+
+  def update
+    item = Item.find(params[:id])
+    item.update(item_params)
   end
 
 
