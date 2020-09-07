@@ -12,13 +12,14 @@
     <div>カテゴリー</div>
     <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
     <div>年齢</div>
-    <%= f.collection_select(:age_year_id, AgeYear.all, :id, :name, {}, {class:"select-box"}) %>
-    <%= f.collection_select(:age_month_id, AgeMonth.all, :id, :name, {}, {class:"select-box"}) %>
+    <%= f.collection_select(:age_year_id, AgeYear.all, :id, :name, {}, {class:"select-box"}) %>年
+    <%= f.collection_select(:age_month_id, AgeMonth.all, :id, :name, {}, {class:"select-box"}) %>ヶ月
     <div>サイズ</div>
-    <%= f.text_field :size, class:"items-text", placeholder: "例)50" %>
+    <%= f.text_field :size, class:"items-text", placeholder: "例)50" %>cm
     <div>値段</div>
-    <%= f.text_field :price, class:"items-text", placeholder: "例)1000" %>
-    <%= f.submit "投稿する" %>
+    ¥<%= f.text_field :price, class:"items-text", placeholder: "例)1000" %>
+    <div>
+    <%= f.submit "投稿する" %></div>
   <% end %>
 </div>
 
