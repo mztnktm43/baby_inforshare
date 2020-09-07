@@ -7,7 +7,7 @@ class ItemsController < ApplicationController
     @item = Item.new
   end
 
-  def creat
+  def create
     Item.create(item_params)
     if @item.valid?
       @item.save
@@ -31,6 +31,6 @@ end
   private
 
   def item_params
-    params.require(:item).permit(:name, :detail, :category_id, :age_yasr_id, :age_month_id, :size, :price).merge(user_id: current_user_id)
+    params.require(:item).permit(:name, :detail, :category_id, :age_year_id, :age_month_id, :size, :price).merge(user_id: current_user_id)
   end
 end
