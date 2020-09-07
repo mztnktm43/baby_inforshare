@@ -18,7 +18,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    # @item = Item.new(item_id)
   end
 
   def update
@@ -26,6 +25,8 @@ class ItemsController < ApplicationController
     item.update(item_params)
   end
 
+def show
+end
 
   private
 
