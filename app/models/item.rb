@@ -8,6 +8,9 @@ class Item < ApplicationRecord
   belongs_to_active_hash :age_month
 
   with_options presence: true do
-    validates :image, :name, :detail, :category_id
+    validates :image
+    validates :name, length: { maximum: 50 }
+    validates :detail, length: {maximum: 1000 }
+    validates :category_id, numericality: { other_than: 1 }
   end
 end
