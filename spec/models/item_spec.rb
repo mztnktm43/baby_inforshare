@@ -29,7 +29,7 @@ describe Item do
       it 'nameが51文字以上のとき' do
         @item.name = Faker::Lorem.characters(number: 51)
         @item.valid?
-        expect(@item.errors.full_messages).to include("Name is too long (maximum is 50 characters)")
+        expect(@item.errors.full_messages).to include('Name is too long (maximum is 50 characters)')
       end
       it 'detailが空のとき' do
         @item.detail = nil
@@ -39,7 +39,7 @@ describe Item do
       it 'detailが1001文字以上のとき' do
         @item.detail = Faker::Lorem.characters(number: 1001)
         @item.valid?
-        expect(@item.errors.full_messages).to include("Detail is too long (maximum is 1000 characters)")
+        expect(@item.errors.full_messages).to include('Detail is too long (maximum is 1000 characters)')
       end
       it 'category_idが空のとき' do
         @item.category_id = nil
@@ -47,14 +47,14 @@ describe Item do
         expect(@item.errors.full_messages).to include("Category can't be blank")
       end
       it 'category_idがid:1{--}のとき' do
-        @item.category_id = "1"
+        @item.category_id = '1'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 1")
+        expect(@item.errors.full_messages).to include('Category must be other than 1')
       end
       it 'userが紐づいていないとき' do
         @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("User must exist")
+        expect(@item.errors.full_messages).to include('User must exist')
       end
     end
   end
