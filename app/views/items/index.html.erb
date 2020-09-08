@@ -3,15 +3,20 @@
 <h1>TOPページ items#index</h1> 
 
 <%# item一覧 %>
-<div class=""><%= link_to 'POST', new_item_path, class:""%>
+<div class="item-post"><%= link_to 'POST', new_item_path, class:""%>
 <div class="item-contents">
   <ul class="item-lists">
     <% @items.each do |item| %>
     <li class=list>
       <%= link_to item_path(item.id) do %>
       <div class="item-img-content">
-        <%= image_tag "#", class:"item-img" %>
+        <%= image_tag item.image, class:"item-img" %>
       </div>
+      <%#Itemの詳細一覧 %>
+      <div class='item-info'>
+        <h3 class='item-name'>
+          <%= item.name %>
+        </h3>
       <% end %>
     </li>
     <%end%>
