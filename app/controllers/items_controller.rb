@@ -25,8 +25,8 @@ class ItemsController < ApplicationController
     item.update(item_params)
   end
 
-def show
-end
+  def show
+  end
 
   private
 

@@ -3,6 +3,6 @@ class Parent < ActiveHash::Base
     { id: 1, name: '--' },
     { id: 2, name: 'ママ' },
     { id: 3, name: 'パパ' },
-    { id: 4, name: '特になし' },
+    { id: 4, name: '特になし' }
   ]
-  end
+end

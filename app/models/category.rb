@@ -13,6 +13,6 @@ class Category < ActiveHash::Base
     { id: 11, name: 'マタニティー' },
     { id: 12, name: 'おもちゃ' },
     { id: 13, name: '日用品' },
-    { id: 14, name: 'お役立ちアイテム' },
+    { id: 14, name: 'お役立ちアイテム' }
   ]
 end

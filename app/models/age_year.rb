@@ -6,6 +6,6 @@ class AgeYear < ActiveHash::Base
     { id: 4, name: '3' },
     { id: 5, name: '4' },
     { id: 6, name: '5' },
-    { id: 7, name: '6' },
+    { id: 7, name: '6' }
   ]
-  end
+end
