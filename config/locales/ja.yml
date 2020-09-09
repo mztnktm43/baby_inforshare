@@ -1,0 +1,10 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+     item:
+       image: 画像
+       name: アイテム名
+       detail: コメント
+       category_id: カテゴリー
