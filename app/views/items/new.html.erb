@@ -3,7 +3,8 @@
   <%= form_with model: @item, local: true do |f| %>
     <div>写真(必須)</div>
     <div class="click-upload">
-    <%= f.file_field :image %>
+    <%= f.file_field :image, id:"item-image" %>
+    <div id="image-list"></div>
     </div>
     <div>アイテムの名前(必須)</div>
     <%= f.text_field :name, class:"items-text", placeholder: "Item name" %>
