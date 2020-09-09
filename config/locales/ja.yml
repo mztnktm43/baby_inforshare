@@ -8,3 +8,4 @@ ja:
        name: アイテム名
        detail: コメント
        category_id: カテゴリー
+       user: ユーザー
