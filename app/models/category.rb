@@ -14,8 +14,9 @@ class Category < ActiveHash::Base
     { id: 12, name: 'マタニティー' },
     { id: 13, name: 'おもちゃ' },
     { id: 14, name: '本、絵本' },
-    { id: 15, name: '日用品' },
-    { id: 16, name: 'お役立ちアイテム' },
-    { id: 17, name: 'その他' }
+    { id: 15, name: '食品' },
+    { id: 16, name: '日用品' },
+    { id: 17, name: 'お役立ちアイテム' },
+    { id: 18, name: 'その他' }
   ]
 end

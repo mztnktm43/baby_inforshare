@@ -1,1 +1,33 @@
 <h1>My Page</h1>
+<%# ユーザー情報を編集できるようにする
+ユーザー以外はユーザー編集できないようにする（投稿者の投稿一覧が見られるだけ） %>
+
+<div>
+UserNickname：<%= @nickname %>
+</div>
+
+  <ul class="item-lists">
+    <% @items.each do |item| %>
+    <li class=list>
+    <%= link_to item_path(item.id) do %>
+      <div class="item-img-content">
+        <%= image_tag item.image, class:"item-img" %>
+      </div>
+      <%#Itemの詳細 %>
+      <div>name</div>
+          <%= item.name %>
+                <div>detail</div>
+          <%= item.detail %>
+                <div>category</div>
+          <%= item.category.name %>
+                <div>age</div>
+          <%= item.age_year.name %>才<%= item.age_month.name %>ヶ月
+                <div>size</div>
+          <%= item.size %>cm
+                <div>price</div>
+          ¥<%= item.price %>
+          <% end %>
+    </li>
+    <%end%>
+  </ul>
+  
