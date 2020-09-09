@@ -9,6 +9,7 @@
     <% @items.each do |item| %>
     <li class=list>
       <%= link_to item_path(item.id) do %>
+      <%# doで囲ったら全体がリンクになる %>
       <div class="item-img-content">
         <%= image_tag item.image, class:"item-img" %>
       </div>
