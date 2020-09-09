@@ -1,1 +1,25 @@
 <h1>詳細ページ</h1>
+<div class="item-show">
+  <h2 class="name">
+    <%= @item.name %>
+  </h2> 
+  <%= image_tag @item.image, class:"item-img"%>
+  <div>出品者</div>
+    <%= @item.user.nickname %>
+  <div>コメント</div>
+    <%= @item.detail %>
+  <div>カテゴリー</div>
+    <%= @item.category.name %>
+  <div>使用するこどもの年齢</div>
+    <%= @item.age_year.name %>年<%= @item.age_month.name %>ヶ月
+  <div>アイテムのサイズ</div>
+    <%= @item.size %>cm
+  <div>値段</div>
+    ¥<%= @item.price %>
+</div>
+
+<% if user_signed_in? && current_user.id == @item.user_id%>
+  <%= link_to '商品の編集', edit_item_path(@item.id), method: :get, class: "item-red-btn" %>
+  <p class='or-text'>or</p>
+  <%= link_to '削除', item_path(@item.id), method: :delete, class:'item-destroy' %>
+<% end %>
