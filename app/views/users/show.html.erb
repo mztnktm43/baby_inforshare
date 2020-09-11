@@ -1,8 +1,7 @@
 <h1>My Page</h1>
 <%# ユーザー情報を編集できるようにする
 ユーザー以外はユーザー編集できないようにする（投稿者の投稿一覧が見られるだけ） %>
-<<<<<<< Updated upstream
-=======
+
 <% if user_signed_in? && current_user.id == @user.id %>
   <div class="#">
     <%= link_to 'User情報編集', edit_user_path(current_user.id), method: :get, class: "item-red-btn" %>
@@ -12,15 +11,15 @@
     (一度削除すると元に戻せません)
   </div>
 <% end %>
->>>>>>> Stashed changes
 
 <div>
-UserNickname：<%= @nickname %>
+UserNickname：<%= @user.nickname %>
 </div>
 
+<div class="items">
   <ul class="item-lists">
     <% @items.each do |item| %>
-    <li class=list>
+    <li class="list">
     <%= link_to item_path(item.id) do %>
       <div class="item-img-content">
         <%= image_tag item.image, class:"item-img" %>
@@ -42,4 +41,4 @@ UserNickname：<%= @nickname %>
     </li>
     <%end%>
   </ul>
-  
+</div>

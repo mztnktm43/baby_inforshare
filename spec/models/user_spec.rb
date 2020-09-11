@@ -23,12 +23,12 @@ describe User do
       it 'nicknameが空だと登録できない' do
         @user.nickname = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームを入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームを入力してください')
       end
       it 'nicknameが16文字以上だと登録できない' do
         @user.nickname = 'aaaaabbbbbcccccd'
         @user.valid?
-        expect(@user.errors.full_messages).to include("ニックネームは15文字以内で入力してください")
+        expect(@user.errors.full_messages).to include('ニックネームは15文字以内で入力してください')
       end
       it '重複したnicknameが存在する場合登録できない' do
         @user.save
@@ -40,19 +40,19 @@ describe User do
       it 'emailが空だと登録できない' do
         @user.email = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Eメールを入力してください")
+        expect(@user.errors.full_messages).to include('Eメールを入力してください')
       end
       it '重複したemailが存在する場合登録できない' do
         @user.save
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("Eメールはすでに存在します")
+        expect(another_user.errors.full_messages).to include('Eメールはすでに存在します')
       end
       it 'passwordが空だと登録できない' do
         @user.password = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワードを入力してください")
+        expect(@user.errors.full_messages).to include('パスワードを入力してください')
       end
       it 'passwordが5文字以下だと登録できない' do
         @user.password = '12345'
@@ -72,7 +72,7 @@ describe User do
       it 'password_confirmationが空だと登録できない' do
         @user.password_confirmation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
+        expect(@user.errors.full_messages).to include('パスワード（確認用）とパスワードの入力が一致しません')
       end
     end
   end

@@ -9,3 +9,7 @@ ja:
        detail: コメント
        category_id: カテゴリー
        user: ユーザー
+     comment:
+       comment: コメント
+       user: ユーザー
+       item: アイテム
