@@ -1,12 +1,14 @@
 <h1>My Page</h1>
 <%# ユーザー情報を編集できるようにする
 ユーザー以外はユーザー編集できないようにする（投稿者の投稿一覧が見られるだけ） %>
+
 <% if user_signed_in? && current_user.id == @user.id %>
   <div class="#">
-    <%= link_to 'User情報編集', edit_user_registration_path, method: :get, class: "item-red-btn" %>
+    <%= link_to 'User情報編集', edit_user_path(current_user.id), method: :get, class: "item-red-btn" %>
   </div>
   <div class="#">
-    <%= link_to 'User削除', user_registration_path, method: :delete, class:'item-destroy' %>
+    <%= link_to 'アカウント削除', user_path(current_user.id), method: :delete, class:'item-destroy' %>
+    (一度削除すると元に戻せません)
   </div>
 <% end %>
 
