@@ -13,4 +13,13 @@ class Item < ApplicationRecord
     validates :detail, length: { maximum: 1000 }
     validates :category_id, numericality: { other_than: 1 }
   end
+
+  def self.search(search)
+    if search != ""
+      Item.where('detail LIKE(?)', "%#{search}%")
+    else
+      Item.all
+    end
+  end
+
 end
