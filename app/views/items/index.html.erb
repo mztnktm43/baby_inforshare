@@ -2,6 +2,11 @@
 <p>Find me in app/views/items/index.html.erb</p> %>
 <h1>TOPページ items#index</h1> 
 
+<%= form_with(url: search_items_path, local: true, method: :get, class: "search-form") do |f| %>
+  <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search-input" %>
+  <%= f.submit "検索", class: "search-btn" %>
+<% end %>
+
 <%# item一覧 %>
 <div class="item-post"><%= link_to 'POST', new_item_path, class:""%>
 <div class="item-contents">
