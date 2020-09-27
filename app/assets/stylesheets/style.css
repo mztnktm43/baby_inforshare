@@ -1,3 +1,51 @@
+/* 全体 */
 .items-text {
   width: 200px;
 }
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ヘッダー */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border:2px solid gainsboro;
+}
+
+.left-header {
+}
+
+.to-top {
+  color: skyblue;
+}
+
+.right-header {
+  display: flex;
+  align-items: center;
+}
+
+.user-button {
+  margin: 2px 0px;
+}
+
+.user-button a{
+  color: palevioletred;
+  background-color: papayawhip;
+  border: 1px solid palevioletred;
+  padding: 3px;
+}
+
+.user-name {
+  color: palevioletred;
+}
+
+/* フッター */
+
+/* Item/index(TopPage) */
